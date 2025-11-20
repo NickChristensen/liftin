@@ -5,8 +5,8 @@ let db: Database.Database | null = null;
 
 export function getDb(): Database.Database {
   if (!db) {
-    // Database is one level up from the webapp directory
-    const dbPath = path.join(process.cwd(), '..', '1763396571.46251_B5F0F277-C15D-4821-89CA-FE0E734CEE55.sqlite');
+    // Database is in the project root
+    const dbPath = path.join(process.cwd(), '1763396571.46251_B5F0F277-C15D-4821-89CA-FE0E734CEE55.sqlite');
 
     db = new Database(dbPath, {
       readonly: true, // Read-only mode
