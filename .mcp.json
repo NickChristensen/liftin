@@ -1,19 +1,35 @@
 {
   "mcpServers": {
-    "chrome-devtools": {
-      "type": "stdio",
-      "command": "npx",
-      "args": [
-        "chrome-devtools-mcp@latest"
-      ],
-      "env": {}
-    },
     "context7": {
       "type": "http",
       "url": "https://mcp.context7.com/mcp",
       "headers": {
         "CONTEXT7_API_KEY": "ctx7sk-45f1af2a-aa3b-41e0-a854-bb908eeb239b"
       }
+    },
+    "next-devtools": {
+      "command": "npx",
+      "args": [
+        "@respawn-app/tool-filter-mcp",
+        "--upstream-stdio",
+        "--deny",
+        "browser_eval",
+        "--",
+        "npx",
+        "next-devtools-mcp@latest"
+      ]
+    },
+    "chrome-devtools": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["chrome-devtools-mcp@latest"],
+      "env": {}
+    }
+  },
+  "disabledMcpServers": {
+    "next-devtools": {
+      "command": "npx",
+      "args": ["-y", "next-devtools-mcp@latest"]
     }
   }
 }
