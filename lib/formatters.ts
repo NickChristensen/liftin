@@ -1,5 +1,5 @@
 import { format, parseISO } from "date-fns";
-import { noop } from "./utils";
+import { roundToDecimals } from "./utils";
 
 /**
  * Format ISO date string to human-readable format
@@ -41,12 +41,8 @@ export function formatDuration(seconds: number): string {
  * Note: Uses 2.2 ratio to match the app's storage format
  * Example: 100 kg -> "220 lbs"
  */
-export function formatWeight(
-  kg: number,
-  options: { rounded: boolean }
-): string {
-  let op = options?.rounded ? Math.round : noop;
-  return `${op(kg * 2.2)} lbs`;
+export function formatWeight(kg: number): string {
+  return `${roundToDecimals(kg * 2.2, 1)} lbs`;
 }
 
 /**

@@ -6,3 +6,8 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export const noop = (_: any) => _;
+
+export const roundToDecimals = (value: number, decimals = 0) => {
+  const factor = 10 ** decimals;
+  return Math.round(value * factor) / factor;
+};

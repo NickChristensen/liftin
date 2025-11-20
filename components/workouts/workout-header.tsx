@@ -29,7 +29,7 @@ export default function WorkoutHeader({ workout }: WorkoutHeaderProps) {
           <div>
             <span className="text-muted-foreground">Bodyweight: </span>
             <span className="font-medium">
-              {formatWeight(workout.bodyweight, { rounded: true })}
+              {formatWeight(workout.bodyweight)}
             </span>
           </div>
         )}
