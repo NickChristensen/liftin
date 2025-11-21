@@ -1,16 +1,16 @@
-import Database from 'better-sqlite3';
-import path from 'path';
+import Database from "better-sqlite3";
+import path from "path";
 
 let db: Database.Database | null = null;
 
 export function getDb(): Database.Database {
   if (!db) {
     // Database is in the project root
-    const dbPath = path.join(process.cwd(), '1763396571.46251_B5F0F277-C15D-4821-89CA-FE0E734CEE55.sqlite');
+    const dbPath = path.join(process.cwd(), "db.sqlite");
 
     db = new Database(dbPath, {
       readonly: true, // Read-only mode
-      fileMustExist: true
+      fileMustExist: true,
     });
   }
 
@@ -18,9 +18,9 @@ export function getDb(): Database.Database {
 }
 
 // Cleanup on process exit (development only)
-if (process.env.NODE_ENV !== 'production') {
-  process.on('exit', () => db?.close());
-  process.on('SIGINT', () => {
+if (process.env.NODE_ENV !== "production") {
+  process.on("exit", () => db?.close());
+  process.on("SIGINT", () => {
     db?.close();
     process.exit(0);
   });

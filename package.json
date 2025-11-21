@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "predev": "npm run db:sync",
+    "prebuild": "npm run db:sync",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
@@ -10,7 +12,8 @@
     "test": "vitest",
     "test:ui": "vitest --ui",
     "test:run": "vitest run",
-    "test:coverage": "vitest run --coverage"
+    "test:coverage": "vitest run --coverage",
+    "db:sync": "cp \"/Users/nick/Library/Mobile Documents/iCloud~com~nstrm~Bello/\"*.sqlite db.sqlite"
   },
   "dependencies": {
     "@radix-ui/react-scroll-area": "^1.2.10",
