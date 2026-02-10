@@ -13,7 +13,7 @@
     "test:ui": "vitest --ui",
     "test:run": "vitest run",
     "test:coverage": "vitest run --coverage",
-    "db:sync": "cp \"/Users/nick/Library/Containers/com.nstrm.Bello/Data/Library/Application Support/Liftin/BelloDataModel.sqlite\" db.sqlite"
+    "db:sync": "cp /Users/nick/Library/Containers/com.nstrm.Bello/Data/Library/Application\\ Support/Liftin/BelloDataModel.* ."
   },
   "dependencies": {
     "@radix-ui/react-scroll-area": "^1.2.10",
